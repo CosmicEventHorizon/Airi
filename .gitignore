@@ -11,13 +11,6 @@ export_presets.cfg
 Thumbs.db
 desktop.ini
 
-# Godot editor-generated metadata
-*.godot
-*.tres
-*.res
-*.tscn
-*.scn
-
 # Ignore UID files if you don’t want to track editor-specific info
 *.gd.uid
 

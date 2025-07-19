@@ -1,0 +1,211 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnuoi34uob4xr"]
+
+[ext_resource type="Script" uid="uid://cmqov8qp28m7q" path="res://scripts/SettingsSave.gd" id="1_rbmmp"]
+
+[node name="Settings" type="Node3D"]
+
+[node name="SettingsUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rbmmp")
+
+[node name="ColorRect" type="ColorRect" parent="SettingsUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="APIPanel" type="Panel" parent="SettingsUI/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.178
+anchor_bottom = 0.178
+offset_top = -79.0
+offset_bottom = 79.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SettingsUI/ColorRect/APIPanel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = -31.0
+offset_right = 414.0
+offset_bottom = 4.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "OpenAI API Key"
+
+[node name="TextEdit" type="TextEdit" parent="SettingsUI/ColorRect/APIPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -81.0
+offset_right = 990.0
+offset_bottom = -37.0
+grow_vertical = 2
+placeholder_text = "Enter your API Key"
+
+[node name="IPAddressPanel" type="Panel" parent="SettingsUI/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.307
+anchor_bottom = 0.307
+offset_top = -79.0
+offset_bottom = 79.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SettingsUI/ColorRect/IPAddressPanel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = -31.0
+offset_right = 414.0
+offset_bottom = 4.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Ollama IP Address"
+
+[node name="TextEdit" type="TextEdit" parent="SettingsUI/ColorRect/IPAddressPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -81.0
+offset_right = 990.0
+offset_bottom = -37.0
+grow_vertical = 2
+placeholder_text = "ex: 192.168.1.12:11434"
+
+[node name="ModelPanel" type="Panel" parent="SettingsUI/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.429
+anchor_bottom = 0.429
+offset_top = -79.0
+offset_bottom = 79.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SettingsUI/ColorRect/ModelPanel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = -31.0
+offset_right = 414.0
+offset_bottom = 4.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Ollama Model"
+
+[node name="TextEdit" type="TextEdit" parent="SettingsUI/ColorRect/ModelPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -81.0
+offset_right = 990.0
+offset_bottom = -37.0
+grow_vertical = 2
+placeholder_text = "ex: llama3.2"
+
+[node name="SystemPromptPanel" type="Panel" parent="SettingsUI/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.552
+anchor_bottom = 0.552
+offset_top = -78.696
+offset_right = -77.184
+offset_bottom = 79.304
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SettingsUI/ColorRect/SystemPromptPanel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = -31.0
+offset_right = 414.0
+offset_bottom = 4.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "System Prompt"
+
+[node name="TextEdit" type="TextEdit" parent="SettingsUI/ColorRect/SystemPromptPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -81.0
+offset_right = 990.0
+offset_bottom = 4.0
+grow_vertical = 2
+placeholder_text = "Enter a system prompt"
+
+[node name="OptionsPanel" type="Panel" parent="SettingsUI/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.012
+anchor_top = 0.693
+anchor_right = 0.012
+anchor_bottom = 0.706
+offset_top = -79.0
+offset_bottom = 79.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SettingsUI/ColorRect/OptionsPanel"]
+layout_mode = 1
+offset_right = 401.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "API Endpoint"
+
+[node name="OptionsButton" type="OptionButton" parent="SettingsUI/ColorRect/OptionsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.264
+anchor_bottom = 0.264
+offset_top = -14.844
+offset_right = 410.0
+offset_bottom = 14.844
+grow_vertical = 2
+
+[node name="ButtonsPanel" type="Panel" parent="SettingsUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -158.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SaveButton" type="Button" parent="SettingsUI/ColorRect/ButtonsPanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -115.0
+offset_top = -65.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Save"
+
+[node name="BackButton" type="Button" parent="SettingsUI/ColorRect/ButtonsPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -65.0
+offset_right = 115.0
+grow_vertical = 0
+text = "Back"
+
+[node name="Console" type="RichTextLabel" parent="SettingsUI/ColorRect/ButtonsPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 83.0
+grow_horizontal = 2
