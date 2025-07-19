@@ -1,0 +1,44 @@
+# Godot-specific
+.import/
+export.cfg
+export_presets.cfg
+*.import
+*.godot.tmp
+*.converted.*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Godot editor-generated metadata
+*.godot
+*.tres
+*.res
+*.tscn
+*.scn
+
+# Ignore UID files if you don’t want to track editor-specific info
+*.gd.uid
+
+# Builds / exports 
+build/
+bin/
+export/
+
+# Backups and temporary files
+*.tmp
+*.bak
+*.backup
+*.orig
+
+# IDEs / editors
+.vscode/
+.idea/
+*.code-workspace
+
+# Logs and system junk
+*.log
+
+# Large assets
+assets/
