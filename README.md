@@ -21,6 +21,7 @@ Airi is a cute avatar-based chat app built with Godot Engine. She lets you talk 
 3. Set your API keys for OpenAI and/or IP Address and Model name for Ollama
 4. Start chatting with Airi!
 
+Avatar based on [VRoid Studio Sample Model (β Version)](https://vroid.pixiv.help/hc/en-us/articles/360014900273-%CE%B2-Ver-AvatarSample-2), provided under [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ---
 
