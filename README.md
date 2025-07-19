@@ -2,7 +2,7 @@
 
 Airi is a cute avatar-based chat app built with Godot Engine. She lets you talk naturally using text input, while she responds via voice using AI models from OpenAI and Ollama.
 
-<img src="images/app_icon.png" alt="App Icon" width="192" height="192">
+<img src="images/app.png" alt="App Icon" width="192" height="192">
 
 
 ![Airi](images/airi.jpg)
