@@ -10,6 +10,7 @@ var settings = {
 	"option" = 0
 }
 
+
 func _ready():
 	load_settings()
 

@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 SettingsLoad="*res://scripts/SettingsLoad.gd"
 Globals="*res://scripts/Globals.gd"
 
+[debug]
+
+file_logging/enable_file_logging=true
+
 [display]
 
 window/handheld/orientation=1
@@ -41,3 +45,4 @@ import/blender/enabled=false
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+shader_compiler/shader_cache/enabled=false

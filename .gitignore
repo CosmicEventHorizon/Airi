@@ -5,6 +5,7 @@ export_presets.cfg
 *.import
 *.godot.tmp
 *.converted.*
+.godot/
 
 # OS-specific
 .DS_Store

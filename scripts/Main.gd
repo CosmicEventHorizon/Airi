@@ -13,7 +13,7 @@ extends Node3D
 @onready var console = get_node("/root/Main/UI/Panel/Console") 
 
 
-func _ready():
+func _ready():	
 	print("[Main] Ready")
 	
 	#conenct signals

@@ -2482,6 +2482,7 @@ offset_right = -123.0
 grow_horizontal = 2
 grow_vertical = 0
 placeholder_text = "Ask me anything"
+wrap_mode = 1
 
 [node name="Button" type="Button" parent="UI/Panel"]
 layout_mode = 1
