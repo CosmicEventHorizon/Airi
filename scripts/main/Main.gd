@@ -35,8 +35,8 @@ func on_prompt_submitted(prompt: String) -> void:
 	Globals.show_debug("[Main] User prompt received: " + prompt)
 
 	Globals.show_debug("[Main] Sending prompt to NLP...")
-	SettingsLoad.load_settings()
-	var response = await nlp.get_response(prompt,SettingsLoad.settings["system_prompt"])
+	Load.load_settings()
+	var response = await nlp.get_response(prompt,Load.settings["system_prompt"])
 	
 	if response == null:
 		Globals.show_error("[Main] Failed to recieve a response from the API")

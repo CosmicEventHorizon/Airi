@@ -1,29 +1,26 @@
-[gd_scene load_steps=47 format=4 uid="uid://dk8uaa8bnv7gi"]
+[gd_scene load_steps=44 format=4 uid="uid://cxwgvus7rx8a1"]
 
-[ext_resource type="Script" uid="uid://bwqu43gi5kytk" path="res://scripts/main/AvatarController.gd" id="1_q8u5g"]
-[ext_resource type="Script" uid="uid://bsopqfllbd7vm" path="res://scripts/main/Main.gd" id="1_wp0k4"]
-[ext_resource type="Texture2D" uid="uid://bnd8iixppm1af" path="res://assets/models/E/AvatarSample_E_F00_002_Body_00.png" id="3_1iba3"]
-[ext_resource type="Texture2D" uid="uid://csc3vfbaqrhi7" path="res://assets/models/E/AvatarSample_E_F00_002_Onepiece_01.png" id="4_yxlcp"]
-[ext_resource type="Texture2D" uid="uid://bunwcxfu38elq" path="res://assets/models/E/AvatarSample_E_F00_002_Shoes_01.png" id="5_ebg2g"]
-[ext_resource type="Texture2D" uid="uid://es4vc5qhcd7e" path="res://assets/models/E/AvatarSample_E_F00_000_HairBack_00.png" id="6_2ofn6"]
-[ext_resource type="Texture2D" uid="uid://b2o3hy7qejhrr" path="res://assets/models/E/AvatarSample_E_F00_000_FaceMouth_00.png" id="7_xa025"]
-[ext_resource type="Texture2D" uid="uid://csxtt5opbuvrd" path="res://assets/models/E/AvatarSample_E_F00_000_EyeWhite_00.png" id="8_36rkl"]
-[ext_resource type="Texture2D" uid="uid://c6rn81pmjc6ls" path="res://assets/models/E/AvatarSample_E_F00_000_FaceEyeline_00.png" id="9_fs0b5"]
-[ext_resource type="Texture2D" uid="uid://b1sox2a58tqv5" path="res://assets/models/E/AvatarSample_E_F00_000_FaceEyelash_00.png" id="10_ma7h6"]
-[ext_resource type="Texture2D" uid="uid://cx1m22jqx4vpd" path="res://assets/models/E/AvatarSample_E_F00_000_FaceBrow_00.png" id="11_e2s0e"]
-[ext_resource type="Script" uid="uid://dr0m1if3ue46e" path="res://scripts/main/UI.gd" id="11_wp0k4"]
-[ext_resource type="Texture2D" uid="uid://c8bqgem4is2iw" path="res://assets/models/E/AvatarSample_E_F00_000_EyeIris_00.png" id="12_gsxep"]
-[ext_resource type="Script" uid="uid://bx4suwqmoxsvi" path="res://scripts/main/NLPClient.gd" id="12_qmy6f"]
-[ext_resource type="Script" uid="uid://dmgelbbwsn1wc" path="res://scripts/main/TTSManager.gd" id="13_mwfav"]
-[ext_resource type="Texture2D" uid="uid://c4wqcdbnyps1m" path="res://assets/models/E/AvatarSample_E_F00_000_EyeHighlight_00.png" id="13_v0vrg"]
-[ext_resource type="Texture2D" uid="uid://dcccvuq6yt4n8" path="res://assets/models/E/AvatarSample_E_F00_000_Face_00.png" id="14_dg70y"]
-[ext_resource type="Texture2D" uid="uid://b3ynwo6dwdqd0" path="res://assets/models/E/AvatarSample_E_F00_000_00_EyeExtra_01.png" id="15_pnhog"]
-[ext_resource type="Texture2D" uid="uid://noxhuphv3s3h" path="res://assets/models/E/AvatarSample_E_F00_000_Hair_00_01.png" id="16_2c4at"]
-[ext_resource type="Texture2D" uid="uid://vd621udli1mr" path="res://assets/models/E/AvatarSample_E_F00_000_Hair_00_02.png" id="17_g6wdg"]
-[ext_resource type="Texture2D" uid="uid://cs1ut0qynettv" path="res://assets/models/E/AvatarSample_E_F00_000_Hair_00_03.png" id="18_hq6as"]
-[ext_resource type="Animation" uid="uid://c1fog5tmde682" path="res://assets/models/E/animations/idle.anim" id="19_yxlcp"]
-[ext_resource type="Texture2D" uid="uid://cffeks53jm4ba" path="res://assets/icons/ffffff/transparent/1x1/lorc/cog.svg" id="21_2ofn6"]
-[ext_resource type="Script" uid="uid://8b5lu5i14g5g" path="res://scripts/main/AnimationSelector.gd" id="23_ebg2g"]
+[ext_resource type="Texture2D" uid="uid://bq28ib6wdbuic" path="res://assets/icons/left_arrow.svg" id="1_50v6p"]
+[ext_resource type="Texture2D" uid="uid://bnd8iixppm1af" path="res://assets/models/E/AvatarSample_E_F00_002_Body_00.png" id="1_uc31t"]
+[ext_resource type="Texture2D" uid="uid://bdltku1b5cspx" path="res://assets/icons/right_arrow.svg" id="2_pp38h"]
+[ext_resource type="Texture2D" uid="uid://csc3vfbaqrhi7" path="res://assets/models/E/AvatarSample_E_F00_002_Onepiece_01.png" id="2_xrsmk"]
+[ext_resource type="Texture2D" uid="uid://bunwcxfu38elq" path="res://assets/models/E/AvatarSample_E_F00_002_Shoes_01.png" id="3_1vhfg"]
+[ext_resource type="Texture2D" uid="uid://es4vc5qhcd7e" path="res://assets/models/E/AvatarSample_E_F00_000_HairBack_00.png" id="4_lre2h"]
+[ext_resource type="Texture2D" uid="uid://b2o3hy7qejhrr" path="res://assets/models/E/AvatarSample_E_F00_000_FaceMouth_00.png" id="5_ti1nj"]
+[ext_resource type="Texture2D" uid="uid://csxtt5opbuvrd" path="res://assets/models/E/AvatarSample_E_F00_000_EyeWhite_00.png" id="6_dp72d"]
+[ext_resource type="Texture2D" uid="uid://c6rn81pmjc6ls" path="res://assets/models/E/AvatarSample_E_F00_000_FaceEyeline_00.png" id="7_sb8e3"]
+[ext_resource type="Texture2D" uid="uid://b1sox2a58tqv5" path="res://assets/models/E/AvatarSample_E_F00_000_FaceEyelash_00.png" id="8_n7ulo"]
+[ext_resource type="Texture2D" uid="uid://cx1m22jqx4vpd" path="res://assets/models/E/AvatarSample_E_F00_000_FaceBrow_00.png" id="9_sbwuk"]
+[ext_resource type="Texture2D" uid="uid://c8bqgem4is2iw" path="res://assets/models/E/AvatarSample_E_F00_000_EyeIris_00.png" id="10_q7tph"]
+[ext_resource type="Texture2D" uid="uid://c4wqcdbnyps1m" path="res://assets/models/E/AvatarSample_E_F00_000_EyeHighlight_00.png" id="11_4iybo"]
+[ext_resource type="Texture2D" uid="uid://dcccvuq6yt4n8" path="res://assets/models/E/AvatarSample_E_F00_000_Face_00.png" id="12_1cbj4"]
+[ext_resource type="Texture2D" uid="uid://b3ynwo6dwdqd0" path="res://assets/models/E/AvatarSample_E_F00_000_00_EyeExtra_01.png" id="13_ok7e6"]
+[ext_resource type="Texture2D" uid="uid://noxhuphv3s3h" path="res://assets/models/E/AvatarSample_E_F00_000_Hair_00_01.png" id="14_env2m"]
+[ext_resource type="Texture2D" uid="uid://vd621udli1mr" path="res://assets/models/E/AvatarSample_E_F00_000_Hair_00_02.png" id="15_68neh"]
+[ext_resource type="Texture2D" uid="uid://cs1ut0qynettv" path="res://assets/models/E/AvatarSample_E_F00_000_Hair_00_03.png" id="16_dapx6"]
+[ext_resource type="Animation" uid="uid://c1fog5tmde682" path="res://assets/models/E/animations/idle.anim" id="17_mp3gb"]
+[ext_resource type="Script" uid="uid://b2k7o1h3b0qcj" path="res://scripts/avatar_select/ModelController.gd" id="18_xrsmk"]
+[ext_resource type="Script" uid="uid://i1ansahmgbqr" path="res://scripts/avatar_select/UI.gd" id="19_1vhfg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hxqq"]
 resource_name = "F00_002_02_Body_00_SKIN"
@@ -31,7 +28,7 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
-albedo_texture = ExtResource("3_1iba3")
+albedo_texture = ExtResource("1_uc31t")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ah8gi"]
 resource_name = "F00_002_01_Onepice_01_CLOTH"
@@ -40,7 +37,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 cull_mode = 2
 shading_mode = 0
-albedo_texture = ExtResource("4_yxlcp")
+albedo_texture = ExtResource("2_xrsmk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4ll3"]
 resource_name = "F00_002_01_Shoes_01_CLOTH"
@@ -49,16 +46,16 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 cull_mode = 2
 shading_mode = 0
-albedo_texture = ExtResource("5_ebg2g")
+albedo_texture = ExtResource("3_1vhfg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eivj4"]
 resource_name = "F00_000_HairBack_00_HAIR"
 transparency = 4
 shading_mode = 0
 albedo_color = Color(0.803803, 0.704972, 0.649988, 1)
-albedo_texture = ExtResource("6_2ofn6")
+albedo_texture = ExtResource("4_lre2h")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_1iba3"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_1m426"]
 resource_name = "AvatarSample_E_Body_baked"
 _surfaces = [{
 "aabb": AABB(-0.579867, 0.0301245, -0.0995206, 1.16023, 1.35443, 0.203599),
@@ -123,7 +120,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="Skin" id="Skin_yxlcp"]
+[sub_resource type="Skin" id="Skin_owm1c"]
 resource_name = "Skin"
 bind_count = 156
 bind/0/name = &"Root"
@@ -598,12 +595,12 @@ bind/155/pose = Transform3D(1, -4.23862e-15, -1.19209e-07, 7.84977e-16, 1, -4.57
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnrr5"]
 resource_name = "F00_000_00_FaceMouth_00_FACE"
 shading_mode = 0
-albedo_texture = ExtResource("7_xa025")
+albedo_texture = ExtResource("5_ti1nj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_atgj4"]
 resource_name = "F00_000_00_EyeWhite_00_EYE"
 shading_mode = 0
-albedo_texture = ExtResource("8_36rkl")
+albedo_texture = ExtResource("6_dp72d")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_luypf"]
 resource_name = "F00_000_00_FaceEyeline_00_FACE"
@@ -611,7 +608,7 @@ transparency = 4
 cull_mode = 2
 shading_mode = 0
 albedo_color = Color(0.785539, 0.524936, 0.540853, 1)
-albedo_texture = ExtResource("9_fs0b5")
+albedo_texture = ExtResource("7_sb8e3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ft1jk"]
 resource_name = "F00_000_00_FaceEyelash_00_FACE"
@@ -619,7 +616,7 @@ transparency = 4
 cull_mode = 2
 shading_mode = 0
 albedo_color = Color(0.691011, 0.442601, 0.461825, 1)
-albedo_texture = ExtResource("10_ma7h6")
+albedo_texture = ExtResource("8_n7ulo")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqgbn"]
 resource_name = "F00_000_00_FaceBrow_00_FACE"
@@ -627,7 +624,7 @@ transparency = 4
 cull_mode = 2
 shading_mode = 0
 albedo_color = Color(0.870599, 0.804441, 0.768517, 1)
-albedo_texture = ExtResource("11_e2s0e")
+albedo_texture = ExtResource("9_sbwuk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wb5m"]
 resource_name = "F00_000_00_EyeIris_00_EYE"
@@ -635,27 +632,27 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
-albedo_texture = ExtResource("12_gsxep")
+albedo_texture = ExtResource("10_q7tph")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fohn6"]
 resource_name = "F00_000_00_EyeHighlight_00_EYE"
 transparency = 4
 cull_mode = 2
 shading_mode = 0
-albedo_texture = ExtResource("13_v0vrg")
+albedo_texture = ExtResource("11_4iybo")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmr7p"]
 resource_name = "F00_000_00_Face_00_SKIN"
 shading_mode = 0
-albedo_texture = ExtResource("14_dg70y")
+albedo_texture = ExtResource("12_1cbj4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4k8x8"]
 resource_name = "F00_000_00_EyeExtra_01_EYE"
 transparency = 4
 shading_mode = 0
-albedo_texture = ExtResource("15_pnhog")
+albedo_texture = ExtResource("13_ok7e6")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ebg2g"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_15wba"]
 resource_name = "AvatarSample_E_Face_baked"
 _blend_shape_names = PackedStringArray("target_0", "target_1", "target_2", "target_3", "target_4", "target_5", "target_6", "target_7", "target_8", "target_9", "target_10", "target_11", "target_12", "target_13", "target_14", "target_15", "target_16", "target_17", "target_18", "target_19", "target_20", "target_21", "target_22", "target_23", "target_24", "target_25", "target_26", "target_27", "target_28", "target_29", "target_30", "target_31", "target_32", "target_33", "target_34", "target_35", "target_36", "target_37", "target_38", "target_39", "target_40")
 _surfaces = [{
@@ -816,7 +813,7 @@ alpha_antialiasing_mode = 0
 cull_mode = 2
 shading_mode = 0
 albedo_color = Color(0.803803, 0.704972, 0.649988, 1)
-albedo_texture = ExtResource("16_2c4at")
+albedo_texture = ExtResource("14_env2m")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbqwd"]
 resource_name = "F00_000_Hair_00_HAIR_02"
@@ -826,7 +823,7 @@ alpha_antialiasing_mode = 0
 cull_mode = 2
 shading_mode = 0
 albedo_color = Color(0.804665, 0.704833, 0.650259, 1)
-albedo_texture = ExtResource("17_g6wdg")
+albedo_texture = ExtResource("15_68neh")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kl3wj"]
 resource_name = "F00_000_Hair_00_HAIR_03"
@@ -836,9 +833,9 @@ alpha_antialiasing_mode = 0
 cull_mode = 2
 shading_mode = 0
 albedo_color = Color(0.883965, 0.692153, 0.634598, 1)
-albedo_texture = ExtResource("18_hq6as")
+albedo_texture = ExtResource("16_dapx6")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2ofn6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_qiomj"]
 resource_name = "AvatarSample_E_Hair001_baked"
 _surfaces = [{
 "aabb": AABB(-0.122417, 1.15527, -0.077576, 0.243015, 0.252851, 0.220115),
@@ -1265,33 +1262,31 @@ tracks/52/keys = PackedFloat32Array(0, 1, 0.00457791, 4.48457e-08, 2.9495e-08, 0
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ljsah"]
 _data = {
-&"idle": ExtResource("19_yxlcp"),
+&"idle": ExtResource("17_mp3gb"),
 &"sad": SubResource("Animation_46f2t")
 }
 
-[node name="Main" type="Node3D"]
-script = ExtResource("1_wp0k4")
+[node name="AvatarSelect" type="Node3D"]
 
-[node name="Avatar" type="Node3D" parent="."]
+[node name="Preview" type="Node3D" parent="."]
 
-[node name="Camera3D" type="Camera3D" parent="Avatar"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0243422, 1.21522, 0.739377)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Preview"]
+
+[node name="Camera3D" type="Camera3D" parent="Preview"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19036, 0.480568)
 current = true
 
-[node name="AvatarController" type="Node3D" parent="Avatar"]
-script = ExtResource("1_q8u5g")
+[node name="Model" type="Node3D" parent="Preview"]
 
-[node name="Airi" type="Node3D" parent="Avatar"]
+[node name="AvatarSample_E" type="Node3D" parent="Preview/Model"]
 
-[node name="AvatarSample_E" type="Node3D" parent="Avatar/Airi"]
+[node name="Armature" type="Node3D" parent="Preview/Model/AvatarSample_E"]
 
-[node name="Armature" type="Node3D" parent="Avatar/Airi/AvatarSample_E"]
+[node name="Hairs" type="Node3D" parent="Preview/Model/AvatarSample_E/Armature"]
 
-[node name="Hairs" type="Node3D" parent="Avatar/Airi/AvatarSample_E/Armature"]
+[node name="secondary" type="Node3D" parent="Preview/Model/AvatarSample_E/Armature"]
 
-[node name="secondary" type="Node3D" parent="Avatar/Airi/AvatarSample_E/Armature"]
-
-[node name="Skeleton3D" type="Skeleton3D" parent="Avatar/Airi/AvatarSample_E/Armature"]
+[node name="Skeleton3D" type="Skeleton3D" parent="Preview/Model/AvatarSample_E/Armature"]
 bones/0/name = "Root"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 2.92898e-16, 3.42285e-08, -8.78695e-16, 1, 1.71143e-08, -3.42285e-08, -1.71143e-08, 1, 0, 0, 0)
@@ -2385,13 +2380,13 @@ bones/155/position = Vector3(0.00032215, -0.00164908, -0.0370042)
 bones/155/rotation = Quaternion(-3.49484e-23, 8.05592e-24, 6.61744e-23, 1)
 bones/155/scale = Vector3(1, 1, 1)
 
-[node name="Body" type="MeshInstance3D" parent="Avatar/Airi/AvatarSample_E/Armature/Skeleton3D"]
-mesh = SubResource("ArrayMesh_1iba3")
-skin = SubResource("Skin_yxlcp")
+[node name="Body" type="MeshInstance3D" parent="Preview/Model/AvatarSample_E/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_1m426")
+skin = SubResource("Skin_owm1c")
 
-[node name="Face" type="MeshInstance3D" parent="Avatar/Airi/AvatarSample_E/Armature/Skeleton3D"]
-mesh = SubResource("ArrayMesh_ebg2g")
-skin = SubResource("Skin_yxlcp")
+[node name="Face" type="MeshInstance3D" parent="Preview/Model/AvatarSample_E/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_15wba")
+skin = SubResource("Skin_owm1c")
 blend_shapes/target_0 = 0.0
 blend_shapes/target_1 = 0.0
 blend_shapes/target_2 = 0.0
@@ -2434,17 +2429,17 @@ blend_shapes/target_38 = 0.0
 blend_shapes/target_39 = 0.0
 blend_shapes/target_40 = 0.0
 
-[node name="Hair001" type="MeshInstance3D" parent="Avatar/Airi/AvatarSample_E/Armature/Skeleton3D"]
-mesh = SubResource("ArrayMesh_2ofn6")
-skin = SubResource("Skin_yxlcp")
+[node name="Hair001" type="MeshInstance3D" parent="Preview/Model/AvatarSample_E/Armature/Skeleton3D"]
+mesh = SubResource("ArrayMesh_qiomj")
+skin = SubResource("Skin_owm1c")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Avatar/Airi/AvatarSample_E"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Preview/Model/AvatarSample_E"]
 libraries = {
 &"": SubResource("AnimationLibrary_ljsah")
 }
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Avatar"]
-transform = Transform3D(1, 0, 0, 0, 0.999417, -0.0341319, 0, 0.0341319, 0.999417, 0.190191, 1.10663, -2.10475)
+[node name="ModelController" type="Node3D" parent="Preview"]
+script = ExtResource("18_xrsmk")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -2453,7 +2448,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("11_wp0k4")
+script = ExtResource("19_1vhfg")
 
 [node name="Panel" type="Panel" parent="UI"]
 layout_mode = 1
@@ -2461,75 +2456,121 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -171.0
-offset_bottom = -1.0
+offset_top = -202.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="UI/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="LeftPanel" type="Panel" parent="UI/Panel"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
 
-[node name="TextEdit" type="TextEdit" parent="UI/Panel"]
+[node name="LeftButton" type="TextureButton" parent="UI/Panel/LeftPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+texture_normal = ExtResource("1_50v6p")
+stretch_mode = 0
+
+[node name="UploadButton" type="Button" parent="UI/Panel/LeftPanel"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -88.0
-offset_right = -123.0
+offset_top = -31.0
 grow_horizontal = 2
 grow_vertical = 0
-placeholder_text = "Ask me anything"
-wrap_mode = 1
+size_flags_vertical = 10
+text = "Upload an Avatar"
 
-[node name="Button" type="Button" parent="UI/Panel"]
+[node name="CenterPanel" type="Panel" parent="UI/Panel"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -115.0
-offset_top = -65.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Submit"
-
-[node name="Console" type="RichTextLabel" parent="UI/Panel"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -78.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SettingsSceneButton" type="TextureButton" parent="UI"]
+[node name="HeaderLabel" type="Label" parent="UI/Panel/CenterPanel"]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.5
+offset_right = 61.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Model Selection"
+
+[node name="PreviewButton" type="Button" parent="UI/Panel/CenterPanel"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Preview"
+
+[node name="ModelRichTextLabel" type="RichTextLabel" parent="UI/Panel/CenterPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.386
+anchor_bottom = 0.386
+offset_top = -16.972
+offset_right = 302.0
+offset_bottom = 29.028
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RightPanel" type="Panel" parent="UI/Panel"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -66.0
-offset_bottom = 64.0
+anchor_bottom = 1.0
+offset_left = -183.0
 grow_horizontal = 0
-texture_normal = ExtResource("21_2ofn6")
-ignore_texture_size = true
-stretch_mode = 6
+grow_vertical = 2
 
-[node name="NLPClient" type="Node3D" parent="."]
-script = ExtResource("12_qmy6f")
+[node name="RightButton" type="TextureButton" parent="UI/Panel/RightPanel"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+texture_normal = ExtResource("2_pp38h")
+stretch_mode = 0
 
-[node name="TTSManager" type="Node3D" parent="."]
-script = ExtResource("13_mwfav")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="LogicManager" type="Node3D" parent="."]
-
-[node name="AnimationSelector" type="Node3D" parent="LogicManager"]
-script = ExtResource("23_ebg2g")
-
-[connection signal="animation_finished" from="Avatar/Airi/AvatarSample_E/AnimationPlayer" to="LogicManager/AnimationSelector" method="on_animation_finished"]
+[node name="ChooseButton" type="Button" parent="UI/Panel/RightPanel"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Choose Model"

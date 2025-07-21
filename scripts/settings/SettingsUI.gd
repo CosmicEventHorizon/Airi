@@ -11,7 +11,7 @@ extends Control
 	"ollama_model" = get_node("/root/Settings/SettingsUI/ColorRect/ModelPanel/TextEdit"),
 	"option" = get_node("/root/Settings/SettingsUI/ColorRect/OptionsPanel/OptionsButton")	
 }
-@onready var console = get_node("/root/Settings/SettingsUI/ColorRect/ButtonsPanel/Console") as RichTextLabel
+@onready var console_rtl = get_node("/root/Settings/SettingsUI/ColorRect/ButtonsPanel/Console") as RichTextLabel
 @onready var save_btn = get_node("/root/Settings/SettingsUI/ColorRect/ButtonsPanel/SaveButton")
 @onready var back_btn = get_node("/root/Settings/SettingsUI/ColorRect/ButtonsPanel/BackButton")
 @onready var paste_btn = get_node("/root/Settings/SettingsUI/ColorRect/ButtonsPanel/PasteButton")
@@ -19,8 +19,8 @@ extends Control
 var api_endpoints = ["Ollama", "OpenAI"]
 
 func _ready():
-	Globals.register_debug_console(console)
-	Globals.register_error_console(console)
+	Globals.register_debug_console(console_rtl)
+	Globals.register_error_console(console_rtl)
 	
 	update_fields()
 	paste_btn.focus_mode = Control.FOCUS_NONE
@@ -34,8 +34,8 @@ func _ready():
 func update_fields():
 	for item in api_endpoints:
 		field_nodes["option"].add_item(item)
-	SettingsLoad.load_settings()
-	var settings = SettingsLoad.settings
+	Load.load_settings()
+	var settings = Load.settings
 	for key in settings.keys():
 		var node = field_nodes.get(key)
 		if node is TextEdit:
@@ -46,7 +46,7 @@ func update_fields():
 
 
 func on_save_btn_pressed():
-	var settings = SettingsLoad.settings.duplicate()
+	var settings = Load.settings.duplicate()
 
 	for key in settings.keys():
 		var node = field_nodes.get(key)
@@ -58,7 +58,7 @@ func on_save_btn_pressed():
 	var config = ConfigFile.new()
 	for key in settings.keys():
 		config.set_value("SETTINGS", key, settings[key])
-	config.save(SettingsLoad.SETTINGS_LOCATION)
+	config.save(Load.SETTINGS_LOCATION)
 	Globals.show_debug("[SettingsSave] User settings saved.")
 
 

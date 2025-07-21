@@ -5,7 +5,7 @@ const MODEL_NAME := "gpt-4.1"
 
 
 func get_response(prompt: String, system_prompt: String):
-	var api_endpoint_choice = SettingsLoad.settings["option"]
+	var api_endpoint_choice = Load.settings["option"]
 	
 	match api_endpoint_choice:
 		0:
@@ -15,8 +15,8 @@ func get_response(prompt: String, system_prompt: String):
 
 
 func ollama_completion(prompt: String, system_prompt: String):
-	var model = SettingsLoad.settings["ollama_model"]
-	var ip_address = SettingsLoad.settings["ollama_ip_address"] 
+	var model = Load.settings["ollama_model"]
+	var ip_address = Load.settings["ollama_ip_address"] 
 	if not ip_address.begins_with("http://") and not ip_address.begins_with("https://"):
 		ip_address = "http://" + ip_address
 	var url = ip_address + "/api/generate"
@@ -74,7 +74,7 @@ func ollama_completion(prompt: String, system_prompt: String):
 	return content
 
 func openai_completion(prompt:String, system_prompt:String):
-	var api_key = SettingsLoad.settings["api_key"]
+	var api_key = Load.settings["api_key"]
 	var headers = [
 		"Content-Type: application/json",
 		"Authorization: Bearer %s" % api_key
