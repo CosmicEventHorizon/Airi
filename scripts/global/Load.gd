@@ -12,8 +12,8 @@ var settings = {
 }
 
 var models = [
-	{"name" = "airi", "path" = "res://assets/models/airi/airi.glb"},
-	{"name" = "viona", "path" = "res://assets/models/viona/viona.glb"}
+	{"name" = "airi", "path" = "res://assets/models/airi/airi.mdl"},
+	{"name" = "viona", "path" = "res://assets/models/viona/viona.mdl"}
 ]
 
 var selected_model_idx = 1
@@ -36,6 +36,10 @@ func load_models():
 	var config = ConfigFile.new()
 	var err = config.load(MODELS_LOCATION)
 	if err != OK:
+		Console.show_debug("No saved models falling back to default")
+		return
+	selected_model_idx = config.get_value("MODEL_CHOICE", "selected_model_idx", 1)
+	if !config.has_section("MODELS"):
 		Console.show_debug("No saved models falling back to default")
 		return
 	var keys: PackedStringArray = config.get_section_keys("MODELS")
@@ -76,21 +80,35 @@ func load_glb(glb_path: String, placeholder: Node):
 	if placeholder.get_child(0).name != "Root":
 		placeholder.get_child(0).name = "Root"
 
-
-
-	ModelRegistry.face = placeholder.get_node("Root/Model/Armature/Skeleton3D/Face")
+	ModelRegistry.skeleton = placeholder.get_node("Root/Model/Armature/Skeleton3D")
 	ModelRegistry.camera = placeholder.get_parent().get_node("Camera3D")
-	var face_position = ModelRegistry.face.global_transform.origin
-	ModelRegistry.camera.look_at(face_position, Vector3.UP)
-	var target = ModelRegistry.face.global_transform.origin
+	var skeleton = ModelRegistry.skeleton
+	var model = ModelRegistry.skeleton.get_parent().get_parent()  
 
-	var vertical_offset = 0.6
-	var backward_offset = 0.4
+	var bone_name = ""
+	var pattern = RegEx.new()
+	pattern.compile("(?i)(face)")  
 
-	var dir_to_face = (ModelRegistry.camera.global_transform.origin - target).normalized()
-	ModelRegistry.camera.global_transform.origin = target + dir_to_face * backward_offset + Vector3.UP * vertical_offset
-	ModelRegistry.camera.look_at(target, Vector3.ZERO)
-	ModelRegistry.camera.rotation_degrees = Vector3(0, 0, 0)
+	for i in range(skeleton.get_bone_count()):
+		var name = skeleton.get_bone_name(i)
+		if pattern.search(name) != null:
+			bone_name = name
+			break
+
+	if bone_name != "":
+		var bone_index = skeleton.find_bone(bone_name)
+		var face_position = skeleton.get_bone_global_pose(bone_index).origin
+
+		var model_forward = -model.global_transform.basis.z.normalized()
+
+		var backward_offset = 0.6
+		var camera_position = face_position - model_forward * backward_offset
+		camera_position.y = face_position.y 
+
+		ModelRegistry.camera.global_transform.origin = camera_position
+		ModelRegistry.camera.look_at(face_position, Vector3.UP)
+	else:
+		print("No bone with 'face' found.")
 
 	ModelRegistry.anim_player = placeholder.get_node("Root/AnimationPlayer")
 	ModelRegistry.anim_player.play("idle")

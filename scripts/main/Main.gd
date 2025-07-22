@@ -8,12 +8,14 @@ extends Node3D
 @onready var anim_selector = get_node("/root/Main/LogicManager/AnimationSelector")
 
 #nodes
-@onready var settings_btn = get_node("/root/Main/UI/SettingsSceneButton")
+@onready var settings_btn = get_node("/root/Main/UI/MenuPanel/SettingsSceneButton")
+@onready var avatar_select_btn = get_node("/root/Main/UI/MenuPanel/AvatarSelectSceneButton")
 @onready var console = get_node("/root/Main/UI/Panel/Console") 
 @onready var placeholder = get_node("/root/Main/Avatar/ModelPlaceholder")
 
 
 func _ready():
+	Load.load_models()
 	var selected_model = Load.models[Load.selected_model_idx]
 	Load.load_glb(selected_model["path"], placeholder)
 	print("[Main] Ready")
@@ -25,6 +27,7 @@ func _ready():
 	#conenct signals
 	ui.prompt_submitted.connect(on_prompt_submitted)
 	settings_btn.pressed.connect(on_settings_btn_pressed)
+	avatar_select_btn.pressed.connect(on_avatar_select_btn_pressed)
 	
 	#loop idle animation
 	ModelRegistry.anim_player.play("idle")
@@ -34,6 +37,9 @@ func _ready():
 func on_settings_btn_pressed():
 	get_tree().root.add_child(load("res://scenes/Settings.tscn").instantiate())
 
+func on_avatar_select_btn_pressed():
+	var avatar_select_scene = load("res://scenes/AvatarSelect.tscn")
+	get_tree().change_scene_to_packed(avatar_select_scene)
 
 func on_prompt_submitted(prompt: String) -> void:
 	Console.register_debug_console(console)

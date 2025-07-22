@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk8uaa8bnv7gi"]
+[gd_scene load_steps=9 format=3 uid="uid://dk8uaa8bnv7gi"]
 
 [ext_resource type="Script" uid="uid://d4jws22i6w8gb" path="res://scripts/main/AvatarController.gd" id="1_q8u5g"]
 [ext_resource type="Script" uid="uid://d18theq3fvann" path="res://scripts/main/Main.gd" id="1_wp0k4"]
+[ext_resource type="Texture2D" uid="uid://4mcbubtm86j1" path="res://assets/icons/avatar.svg" id="5_jlsqs"]
 [ext_resource type="Script" uid="uid://0fmg70vxirjn" path="res://scripts/main/UI.gd" id="11_wp0k4"]
 [ext_resource type="Script" uid="uid://ce53ygukrvlyo" path="res://scripts/main/NLPClient.gd" id="12_qmy6f"]
 [ext_resource type="Script" uid="uid://g2m0xsy3ub78" path="res://scripts/main/TTSManager.gd" id="13_mwfav"]
@@ -86,15 +87,41 @@ offset_top = -78.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SettingsSceneButton" type="TextureButton" parent="UI"]
+[node name="MenuPanel" type="Panel" parent="UI"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -66.0
-offset_bottom = 64.0
+offset_left = -103.0
+offset_bottom = 159.0
 grow_horizontal = 0
+
+[node name="SettingsSceneButton" type="TextureButton" parent="UI/MenuPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.0
+offset_right = 33.0
+offset_bottom = 64.0
+grow_horizontal = 2
 texture_normal = ExtResource("21_2ofn6")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="AvatarSelectSceneButton" type="TextureButton" parent="UI/MenuPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -64.0
+offset_right = 33.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_jlsqs")
 ignore_texture_size = true
 stretch_mode = 6
 

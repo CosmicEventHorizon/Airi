@@ -64,7 +64,7 @@ size_flags_vertical = 6
 texture_normal = ExtResource("1_50v6p")
 stretch_mode = 0
 
-[node name="UploadButton" type="Button" parent="UI/Panel/LeftPanel"]
+[node name="BackButton" type="Button" parent="UI/Panel/LeftPanel"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 1
 anchors_preset = 12
@@ -75,7 +75,7 @@ offset_top = -31.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 10
-text = "Upload an Avatar"
+text = "Back"
 
 [node name="CenterPanel" type="Panel" parent="UI/Panel"]
 custom_minimum_size = Vector2(300, 0)
@@ -98,7 +98,7 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "Model Selection"
 
-[node name="PreviewButton" type="Button" parent="UI/Panel/CenterPanel"]
+[node name="UploadButton" type="Button" parent="UI/Panel/CenterPanel"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 1
 anchors_preset = 12
@@ -108,7 +108,7 @@ anchor_bottom = 1.0
 offset_top = -43.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Preview"
+text = "Upload a Model"
 
 [node name="ModelRichTextLabel" type="RichTextLabel" parent="UI/Panel/CenterPanel"]
 layout_mode = 1

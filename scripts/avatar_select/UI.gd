@@ -4,33 +4,37 @@ extends Control
 @onready var model_rtl = get_node("/root/AvatarSelect/UI/Panel/CenterPanel/ModelRichTextLabel/") as RichTextLabel
 @onready var left_btn = get_node("/root/AvatarSelect/UI/Panel/LeftPanel/LeftButton")
 @onready var right_btn = get_node("/root/AvatarSelect/UI/Panel/RightPanel/RightButton")
-@onready var preview_btn = get_node("/root/AvatarSelect/UI/Panel/CenterPanel/PreviewButton")
-@onready var upload_btn = get_node("/root/AvatarSelect/UI/Panel/LeftPanel/UploadButton")
+@onready var back_btn = get_node("/root/AvatarSelect/UI/Panel/LeftPanel/BackButton")
+@onready var upload_btn = get_node("/root/AvatarSelect/UI/Panel/CenterPanel/UploadButton")
 @onready var choose_btn = get_node("/root/AvatarSelect/UI/Panel/RightPanel/ChooseButton")
 
 var current_idx = 0
 
 func _ready():
-	update_ui("airi")
+	current_idx = Load.selected_model_idx
+	update_ui(Load.models[Load.selected_model_idx]["name"])
 	#connect singals
 	left_btn.pressed.connect(on_left_btn_pressed)
 	right_btn.pressed.connect(on_right_btn_pressed)
-	preview_btn.pressed.connect(on_preview_btn_pressed)
+	back_btn.pressed.connect(on_back_btn_pressed)
 	upload_btn.pressed.connect(on_upload_btn_pressed)
 	choose_btn.pressed.connect(on_choose_btn_pressed)
 
 
 func on_left_btn_pressed():
 	current_idx = (current_idx - 1) % Load.models.size()
+	var load_scene = Load.load_glb(Load.models[current_idx]["path"], ModelRegistry.placeholder)
 	update_ui(Load.models[current_idx]["name"])
 
 
 func on_right_btn_pressed():
 	current_idx = (current_idx + 1) % Load.models.size()
+	var load_scene = Load.load_glb(Load.models[current_idx]["path"], ModelRegistry.placeholder)
 	update_ui(Load.models[current_idx]["name"])
 
-func on_preview_btn_pressed():
-	var load_scene = Load.load_glb(Load.models[current_idx]["path"], ModelRegistry.placeholder)
+func on_back_btn_pressed():
+	var main_scene = load("res://scenes/Main.tscn")
+	get_tree().change_scene_to_packed(main_scene)
 
 
 func on_upload_btn_pressed():
@@ -38,6 +42,10 @@ func on_upload_btn_pressed():
 	dialog.access=FileDialog.ACCESS_FILESYSTEM
 	dialog.filters = ["*.glb"]
 	dialog.file_selected.connect(save_model)
+	add_child(dialog)
+	dialog.popup_centered()
+
+	
 	
 func save_model(path: String):
 	var filename = path.get_file().get_basename()
@@ -66,3 +74,4 @@ func on_choose_btn_pressed():
 		Console.show_error("[AvatarSelect/UI] failed to write to file")
 	else:
 		Console.show_debug("[AvatarSelect/UI] saved configuration")
+	on_back_btn_pressed()
