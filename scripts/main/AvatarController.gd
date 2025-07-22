@@ -3,15 +3,12 @@ extends Node
 #script
 @onready var tts = get_node("/root/Main/TTSManager")
 
-#nodes
-@onready var mesh = get_node("/root/Main/Avatar/Airi/AvatarSample_E/Armature/Skeleton3D/Face")
-
 var shape_map = {
-	"A": "target_26",
-	"U": "target_31",
-	"E": "target_32",
-	"O": "target_27",
-	"I": "target_30"
+	"A": "MTH_A",
+	"U": "MTH_U",
+	"E": "MTH_E",
+	"O": "MTH_O",
+	"I": "MTH_I"
 }
 var is_speaking = false
 var fake_phonemes = ["A", "I", "U", "E", "O"]
@@ -60,9 +57,9 @@ func play_fake_phonemes_timeline(talk_segments: Array) -> void:
 			var phoneme = fake_phonemes[i % fake_phonemes.size()]
 			var blend = shape_map.get(phoneme, null)
 			if blend:
-				mesh.set("blend_shapes/%s" % blend, 0.5)
+				ModelRegistry.model_mth.set("blend_shapes/%s" % blend, 0.5)
 				await get_tree().create_timer(0.1).timeout
-				mesh.set("blend_shapes/%s" % blend, 0.0)
+				ModelRegistry.model_mth.set("blend_shapes/%s" % blend, 0.0)
 			await get_tree().create_timer(0.05).timeout
 			i += 1
 		elif now >= seg_end:
@@ -72,4 +69,4 @@ func play_fake_phonemes_timeline(talk_segments: Array) -> void:
 
 func reset_blend_shapes():
 	for shape in shape_map.values():
-		mesh.set("blend_shapes/%s" % shape, 0.0)
+		ModelRegistry.model_mth.set("blend_shapes/%s" % shape, 0.0)

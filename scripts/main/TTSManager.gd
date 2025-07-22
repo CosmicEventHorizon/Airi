@@ -22,31 +22,31 @@ func speak(prompt: String, message: String, message_jp: String, speaker: String 
 	var headers = ["Content-Type: application/json"]
 	var err = http.request(TTS_URL, headers, HTTPClient.METHOD_POST, JSON.stringify(payload))
 	if err != OK:
-		Globals.show_error("[TTS] Request failed: " + err)
+		Console.show_error("[TTS] Request failed: " + err)
 		return null
 	var result = await http.request_completed
 	var response_code = result[1]
 	var raw_body = result[3]
 	if response_code != 200:
-		Globals.show_error("[TTS] Non-200 status code.")
+		Console.show_error("[TTS] Non-200 status code.")
 		return null
 	var parsed = JSON.parse_string(raw_body.get_string_from_utf8())
 	if typeof(parsed) != TYPE_DICTIONARY:
-		Globals.show_error("[TTS] Failed to parse JSON.")
+		Console.show_error("[TTS] Failed to parse JSON.")
 		return null
 	var event_id: String = parsed["event_id"]
-	Globals.show_debug("[TTS] Recieved the event ID " + event_id)
+	Console.show_debug("[TTS] Recieved the event ID " + event_id)
 
 	#receive wav url
 	var url = TTS_URL + "/" + event_id
 	err = http.request(url)
 	if err != OK:
-		Globals.show_error("[TTS] Failed to send request: " + err)
+		Console.show_error("[TTS] Failed to send request: " + err)
 		return null
 	result = await http.request_completed
 	response_code = result[1]
 	if response_code != 200:
-		Globals.show_error("[TTS] Audio url request failed with code " + response_code)
+		Console.show_error("[TTS] Audio url request failed with code " + response_code)
 		return null
 	raw_body = result[3].get_string_from_utf8()
 	var wav_url = null
@@ -56,24 +56,24 @@ func speak(prompt: String, message: String, message_jp: String, speaker: String 
 			var data_line = line.substr(6)
 			var parsed_url = JSON.parse_string(data_line)
 			if parsed_url[1] == null:
-				Globals.show_error("[TTS] Failed to recieve audio url " + data_line)
+				Console.show_error("[TTS] Failed to recieve audio url " + data_line)
 				return null
 			else:
 				wav_url = parsed_url[1]["url"]
 	if wav_url == null:
-		Globals.show_error("[TTS] Failed to parse audio url.")
+		Console.show_error("[TTS] Failed to parse audio url.")
 		return null
 
 	#recieve wav data
 	err = http.request(wav_url)
 	if err != OK:
-		Globals.show_error("[TTS] Failed to start audio download.")
+		Console.show_error("[TTS] Failed to start audio download.")
 		return null
 	result = await http.request_completed
 	response_code = result[1]
 	raw_body = result[3]
 	if response_code != 200:
-		Globals.show_error("[TTS] Audio download failed with code %s " + response_code)
+		Console.show_error("[TTS] Audio download failed with code %s " + response_code)
 		return null
 
 	#create audio stream
@@ -97,10 +97,10 @@ func speak(prompt: String, message: String, message_jp: String, speaker: String 
 	#play audio
 	audio_player.stream = audio_stream
 	audio_player.play()
-	Globals.show_debug("[TTS] Playing audio...")
+	Console.show_debug("[TTS] Playing audio...")
 	
 	#show subtitle
-	Globals.show_message(message)
+	Console.show_message(message)
 	return 0
 
 func analyze_audio(audio_stream: AudioStreamWAV) -> Array:

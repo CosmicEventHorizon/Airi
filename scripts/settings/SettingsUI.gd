@@ -19,8 +19,8 @@ extends Control
 var api_endpoints = ["Ollama", "OpenAI"]
 
 func _ready():
-	Globals.register_debug_console(console_rtl)
-	Globals.register_error_console(console_rtl)
+	Console.register_debug_console(console_rtl)
+	Console.register_error_console(console_rtl)
 	
 	update_fields()
 	paste_btn.focus_mode = Control.FOCUS_NONE
@@ -44,7 +44,6 @@ func update_fields():
 			node.selected = settings[key]
 
 
-
 func on_save_btn_pressed():
 	var settings = Load.settings.duplicate()
 
@@ -59,11 +58,11 @@ func on_save_btn_pressed():
 	for key in settings.keys():
 		config.set_value("SETTINGS", key, settings[key])
 	config.save(Load.SETTINGS_LOCATION)
-	Globals.show_debug("[SettingsSave] User settings saved.")
+	Console.show_debug("[SettingsSave] User settings saved.")
 
 
 func on_back_btn_pressed():
-	Globals.clear_consoles()
+	Console.clear_consoles()
 	get_node("/root/Settings").queue_free()
 
 

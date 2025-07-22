@@ -44,26 +44,26 @@ func ollama_completion(prompt: String, system_prompt: String):
 		JSON.stringify(body)
 	)
 	if err != OK:
-		Globals.show_error("[NLP] Request failed to start: " + str(err))
+		Console.show_error("[NLP] Request failed to start: " + str(err))
 		return null
 
-	Globals.show_debug("[NLP] Awaiting Ollama response...")
+	Console.show_debug("[NLP] Awaiting Ollama response...")
 	var result = await http.request_completed
 	var response_code = result[1]
 	var raw_body = result[3]
-	Globals.show_debug("[NLP] Raw Response Code: " + str(response_code))
+	Console.show_debug("[NLP] Raw Response Code: " + str(response_code))
 	if response_code != 200:
-		Globals.show_error("[NLP] Non-200 response: " + str(response_code))
+		Console.show_error("[NLP] Non-200 response: " + str(response_code))
 		return null
 
 	var parsed = JSON.parse_string(raw_body.get_string_from_utf8())
 	if typeof(parsed) != TYPE_DICTIONARY:
-		Globals.show_error("[NLP] Failed to parse response JSON.")
+		Console.show_error("[NLP] Failed to parse response JSON.")
 		return null
 
 	var content = parsed.get("response", null)
 	if content == null:
-		Globals.show_error("[NLP] Failed to get response content.")
+		Console.show_error("[NLP] Failed to get response content.")
 		return null
 	
 	var think_pattern = RegEx.new()
@@ -94,25 +94,25 @@ func openai_completion(prompt:String, system_prompt:String):
 		JSON.stringify(body)
 	)
 	if err != OK:
-		Globals.show_error("[NLP] Request failed to start: " + str(err))
+		Console.show_error("[NLP] Request failed to start: " + str(err))
 		return null
 
-	Globals.show_debug("[NLP] Awaiting OpenAI response...")
+	Console.show_debug("[NLP] Awaiting OpenAI response...")
 	var result = await http.request_completed
 	var response_code = result[1]
 	var raw_body = result[3]
-	Globals.show_debug("[NLP] Raw Response Code: " + str(response_code))
+	Console.show_debug("[NLP] Raw Response Code: " + str(response_code))
 	if response_code != 200:
-		Globals.show_error("[NLP] Non-200 response: " + str(response_code))
+		Console.show_error("[NLP] Non-200 response: " + str(response_code))
 		return null
 
 	var parsed = JSON.parse_string(raw_body.get_string_from_utf8())
 	if typeof(parsed) != TYPE_DICTIONARY:
-		Globals.show_error("[NLP] Failed to parse response JSON.")
+		Console.show_error("[NLP] Failed to parse response JSON.")
 		return null
 	var output = parsed.get("output", null)
 	if output == null:
-		Globals.show_error("[NLP] Failed to get response content.")
+		Console.show_error("[NLP] Failed to get response content.")
 		return null
 	var content = output[0]["content"]
 	return content[0]["text"]

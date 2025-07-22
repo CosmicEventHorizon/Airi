@@ -8,6 +8,7 @@ extends Control
 @onready var upload_btn = get_node("/root/AvatarSelect/UI/Panel/LeftPanel/UploadButton")
 @onready var choose_btn = get_node("/root/AvatarSelect/UI/Panel/RightPanel/ChooseButton")
 
+var current_idx = 0
 
 func _ready():
 	update_ui("airi")
@@ -19,13 +20,19 @@ func _ready():
 	choose_btn.pressed.connect(on_choose_btn_pressed)
 
 
-
 func on_left_btn_pressed():
-	pass
+	current_idx = (current_idx - 1) % Load.models.size()
+	update_ui(Load.models[current_idx]["name"])
+
+
 func on_right_btn_pressed():
-	pass
+	current_idx = (current_idx + 1) % Load.models.size()
+	update_ui(Load.models[current_idx]["name"])
+
 func on_preview_btn_pressed():
-	pass
+	var load_scene = Load.load_glb(Load.models[current_idx]["path"], ModelRegistry.placeholder)
+
+
 func on_upload_btn_pressed():
 	var dialog = FileDialog.new()
 	dialog.access=FileDialog.ACCESS_FILESYSTEM
@@ -33,10 +40,12 @@ func on_upload_btn_pressed():
 	dialog.file_selected.connect(save_model)
 	
 func save_model(path: String):
-	var name = path.get_file().get_basename()
+	var filename = path.get_file().get_basename()
 	var config  = ConfigFile.new()
-	config.set_value("MODELS", name, path)
-	
+	config.set_value("MODELS", filename, path)
+	var err = config.save(Load.MODELS_LOCATION)
+	if err != OK:
+		Console.show_error("[AvatarSelect/UI] failed to write to file")
 
 
 func update_ui(model: String):
@@ -47,4 +56,13 @@ func update_ui(model: String):
 
 
 func on_choose_btn_pressed():
-	pass
+	var config  = ConfigFile.new()
+	var load_err = config.load(Load.MODELS_LOCATION)
+	if load_err != OK:
+		Console.show_debug("[AvatarSelect/UI] models.cfg not found, creating one")
+	config.set_value("MODEL_CHOICE", "selected_model_idx", current_idx)
+	var save_err = config.save(Load.MODELS_LOCATION)
+	if save_err != OK:
+		Console.show_error("[AvatarSelect/UI] failed to write to file")
+	else:
+		Console.show_debug("[AvatarSelect/UI] saved configuration")

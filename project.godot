@@ -18,7 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Load="*res://scripts/global/Load.gd"
-Globals="*res://scripts/global/Globals.gd"
+Console="*res://scripts/global/Console.gd"
+ModelRegistry="*res://scripts/global/ModelRegistry.gd"
 
 [debug]
 

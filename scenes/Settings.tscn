@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dnuoi34uob4xr"]
 
-[ext_resource type="Script" uid="uid://bghh051givy64" path="res://scripts/settings/SettingsUI.gd" id="1_rbmmp"]
+[ext_resource type="Script" uid="uid://c4cucjljhffu6" path="res://scripts/settings/SettingsUI.gd" id="1_rbmmp"]
 
 [node name="Settings" type="Node3D"]
 
