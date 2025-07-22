@@ -14,8 +14,6 @@ func _process(_delta: float) -> void:
 	if OS.get_name() not in ["Android", "iOS"]:
 		return
 	var keyboard_height := DisplayServer.virtual_keyboard_get_height()
-	if keyboard_height <= 0:
-		return
 	self.size.y = get_viewport_rect().size.y - (keyboard_height / get_viewport_transform().get_scale().y)
 
 func on_prompt_btn_pressed():
