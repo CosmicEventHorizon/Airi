@@ -18,6 +18,7 @@ var models = [
 
 var selected_model_idx = 1
 
+var model_loaded = false
 
 func _ready():
 	load_settings()
@@ -82,9 +83,20 @@ func load_glb(glb_path: String, placeholder: Node):
 
 	ModelRegistry.skeleton = placeholder.get_node("Root/Model/Armature/Skeleton3D")
 	ModelRegistry.camera = placeholder.get_parent().get_node("Camera3D")
+	ModelRegistry.anim_player = placeholder.get_node("Root/AnimationPlayer")
+	ModelRegistry.anim_player.play("idle")
+	ModelRegistry.anim_player.get_animation("idle").loop = true
+	
+	model_loaded = true
+	print_node_tree(placeholder)
+	return model_scene
+	
+	
+func _process(delta):
+	if not ModelRegistry.skeleton or not model_loaded or not ModelRegistry.skeleton.is_inside_tree():
+		return
 	var skeleton = ModelRegistry.skeleton
 	var model = ModelRegistry.skeleton.get_parent().get_parent()  
-
 	var bone_name = ""
 	var pattern = RegEx.new()
 	pattern.compile("(?i)(face)")  
@@ -94,14 +106,13 @@ func load_glb(glb_path: String, placeholder: Node):
 		if pattern.search(name) != null:
 			bone_name = name
 			break
-
 	if bone_name != "":
 		var bone_index = skeleton.find_bone(bone_name)
 		var face_position = skeleton.get_bone_global_pose(bone_index).origin
 
 		var model_forward = -model.global_transform.basis.z.normalized()
 
-		var backward_offset = 0.6
+		var backward_offset = 0.8
 		var camera_position = face_position - model_forward * backward_offset
 		camera_position.y = face_position.y 
 
@@ -109,14 +120,6 @@ func load_glb(glb_path: String, placeholder: Node):
 		ModelRegistry.camera.look_at(face_position, Vector3.UP)
 	else:
 		print("No bone with 'face' found.")
-
-	ModelRegistry.anim_player = placeholder.get_node("Root/AnimationPlayer")
-	ModelRegistry.anim_player.play("idle")
-	ModelRegistry.anim_player.get_animation("idle").loop = true
-
-
-	print_node_tree(placeholder)
-	return model_scene
 
 func print_node_tree(node: Node, indent: int = 0):
 	print("  ".repeat(indent) + node.name + " (" + node.get_class() + ")")

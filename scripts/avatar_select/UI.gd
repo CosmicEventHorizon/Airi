@@ -22,7 +22,9 @@ func _ready():
 
 
 func on_left_btn_pressed():
-	current_idx = (current_idx - 1) % Load.models.size()
+	current_idx -= 1
+	if current_idx < 0:
+		current_idx = Load.models.size() - 1
 	var load_scene = Load.load_glb(Load.models[current_idx]["path"], ModelRegistry.placeholder)
 	update_ui(Load.models[current_idx]["name"])
 
